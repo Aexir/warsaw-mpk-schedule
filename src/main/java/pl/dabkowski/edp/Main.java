@@ -4,29 +4,32 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lombok.Data;
+import lombok.Getter;
 import pl.dabkowski.edp.database.MySqlManager;
 
 import java.io.IOException;
 
+
 public class Main extends Application{
 
-    public static Main instance;
-    public static Config config;
-    public static UmAPI umAPI;
-    public static MySqlManager mySqlManager;
+
+    private static Config config;
+    private static UmAPI umAPI;
+    private static MySqlManager mySqlManager;
+
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setScene(scene);
         stage.show();
     }
 
 
     public static void main(String[] args) throws IOException {
-
         config = new Config();
         umAPI = new UmAPI();
         launch();

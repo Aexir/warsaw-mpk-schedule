@@ -41,20 +41,20 @@ public class UmAPI {
 //
 
 
-        try {
-            JSONArray jsonArray = getAllBusStops().getJSONArray("result");
-
-            for (int i = 0; i < 2; i++){
-                JSONObject obj = jsonArray.getJSONObject(i);
-                JSONArray jsonArray1 = obj.getJSONArray("values");
-                for (int j = 0; j < jsonArray1.length(); j++){
-                    System.out.println(jsonArray1.getString(j));
-                }
-                System.out.println("///");
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            JSONArray jsonArray = getAllBusStops().getJSONArray("result");
+//
+//            for (int i = 0; i < 2; i++){
+//                JSONObject obj = jsonArray.getJSONObject(i);
+//                JSONArray jsonArray1 = obj.getJSONArray("values");
+//                for (int j = 0; j < jsonArray1.length(); j++){
+//                    System.out.println(jsonArray1.getString(j));
+//                }
+//                System.out.println("///");
+//            }
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public JSONObject getAllBusStops() throws IOException {
