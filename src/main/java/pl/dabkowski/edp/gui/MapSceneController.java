@@ -11,6 +11,9 @@ import pl.dabkowski.edp.Main;
 import java.net.URL;
 
 public class MapSceneController {
+
+    private WebEngine webEngine;
+
     @FXML
     private WebView mapView;
 
@@ -18,11 +21,19 @@ public class MapSceneController {
     private Button refreshButton;
 
     @FXML
+    private Button addbutton;
+
+    @FXML
     void onRefreshClick(MouseEvent event) {
-        WebEngine webEngine = mapView.getEngine();
+        webEngine = mapView.getEngine();
         mapView.setZoom(1);
         final URL urlGoogleMaps = Main.class.getResource("mapa.html");
         webEngine.load(urlGoogleMaps.toExternalForm());
     }
 
+    @FXML
+    public void onaddClick(MouseEvent mouseEvent) {
+        webEngine.executeScript("test(51.5, 21.0117800)");
+
+    }
 }
