@@ -1,5 +1,7 @@
 package pl.dabkowski.edp.gui;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,6 +26,8 @@ public class MainSceneController {
         Stage stage = new Stage();
         Scene scene = new Scene(fxmlLoader);
         stage.setScene(scene);
+        scene.widthProperty().addListener((observableValue, number, t1) -> System.out.println("Width: " + t1));
+        scene.heightProperty().addListener((observableValue, number, t1) -> System.out.println("Height: " + t1));
         stage.show();
     }
 }

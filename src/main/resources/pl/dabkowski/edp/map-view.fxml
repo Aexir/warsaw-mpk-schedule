@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="636.0" scaleShape="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.dabkowski.edp.gui.MapSceneController">
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
+            <TextField prefHeight="26.0" prefWidth="354.0" HBox.hgrow="ALWAYS">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </TextField>
+            <Separator prefHeight="80.0" prefWidth="35.0" visible="false" />
+            <Button fx:id="refreshButton" mnemonicParsing="false" onMouseClicked="#onRefreshClick" prefHeight="30.0" prefWidth="134.0" text="Button" />
+            <Separator prefHeight="0.0" prefWidth="15.0" visible="false" />
          </children>
       </HBox>
    </top>
    <center>
-      <WebView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <WebView fx:id="mapView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
