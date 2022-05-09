@@ -40,7 +40,7 @@ public class MySqlManager {
     }
 
     public Connection getConnection() throws SQLException {
-        if(conn == null || conn.isClosed()){
+        if (conn == null || conn.isClosed()) {
             conn = prepareConnection();
         }
         return conn;

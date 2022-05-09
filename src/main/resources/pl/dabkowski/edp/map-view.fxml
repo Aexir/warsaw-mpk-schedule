@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.web.*?>
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="636.0" scaleShape="false" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.dabkowski.edp.gui.MapSceneController">
-   <top>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <TextField prefHeight="26.0" prefWidth="354.0" HBox.hgrow="ALWAYS">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <HBox.margin>
-                  <Insets left="50.0" />
-               </HBox.margin>
-            </TextField>
-            <Separator prefHeight="80.0" prefWidth="35.0" visible="false" />
-            <Button fx:id="refreshButton" mnemonicParsing="false" onMouseClicked="#onRefreshClick" prefHeight="30.0" prefWidth="134.0" text="Button" />
-            <Button fx:id="addbutton" mnemonicParsing="false" onMouseClicked="#onaddClick" text="Button" />
-            <Separator prefHeight="0.0" prefWidth="15.0" visible="false" />
-         </children>
-      </HBox>
-   </top>
-   <center>
-      <WebView fx:id="mapView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </center>
+<?import javafx.scene.web.WebView?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="579.0" prefWidth="636.0" scaleShape="false"
+            xmlns="http://javafx.com/javafx/11.0.2" fx:controller="pl.dabkowski.edp.gui.controllers.MapSceneController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField prefHeight="26.0" prefWidth="354.0" HBox.hgrow="ALWAYS">
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <HBox.margin>
+                        <Insets left="50.0"/>
+                    </HBox.margin>
+                </TextField>
+                <Separator prefHeight="80.0" prefWidth="35.0" visible="false"/>
+                <Button fx:id="refreshButton" mnemonicParsing="false" onMouseClicked="#onRefreshClick" prefHeight="30.0"
+                        prefWidth="134.0" text="Button"/>
+                <Button fx:id="addbutton" mnemonicParsing="false" onMouseClicked="#onaddClick" text="Button"/>
+                <Separator prefHeight="0.0" prefWidth="15.0" visible="false"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <WebView fx:id="mapView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+    </center>
 </BorderPane>

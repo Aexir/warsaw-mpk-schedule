@@ -8,6 +8,8 @@ module pl.dabkowski.edprojfx {
 
     opens pl.dabkowski.edp to javafx.fxml;
     exports pl.dabkowski.edp;
-    exports pl.dabkowski.edp.gui;
     opens pl.dabkowski.edp.gui to javafx.fxml;
+    exports pl.dabkowski.edp.gui.controllers;
+    opens pl.dabkowski.edp.gui.controllers to javafx.fxml;
+    exports pl.dabkowski.edp.gui;
 }

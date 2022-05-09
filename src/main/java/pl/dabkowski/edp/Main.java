@@ -4,33 +4,29 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import lombok.Data;
 import lombok.Getter;
 import pl.dabkowski.edp.database.MySqlManager;
+import pl.dabkowski.edp.threads.UpdateBusposThread;
+import pl.dabkowski.edp.threads.UpdateTramposThread;
 
 import java.io.IOException;
 
 
-public class Main extends Application{
-
+public class Main extends Application {
 
     private static Config config;
+    @Getter
     private static UmAPI umAPI;
     private static MySqlManager mySqlManager;
-
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
-        stage.setTitle("Hello!");
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setScene(scene);
-        stage.show();
-    }
-
+    @Getter
+    private static Stage theStage;
 
     public static void main(String[] args) throws IOException {
         config = new Config();
         umAPI = new UmAPI();
+
+        new UpdateBusposThread().start();
+        new UpdateTramposThread().start();
         launch();
 //        mySqlManager = new MySqlManager();
 //        umAPI = new UmAPI();
@@ -57,6 +53,16 @@ public class Main extends Application{
 //            e.printStackTrace();
 //        }
 
+    }
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
+        theStage = stage;
+        theStage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        theStage.setScene(scene);
+        theStage.show();
     }
 
 }
