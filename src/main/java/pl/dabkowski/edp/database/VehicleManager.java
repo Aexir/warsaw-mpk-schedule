@@ -19,14 +19,13 @@ public class VehicleManager {
         }
     }
 
-    public static int getBusesCount(){
+    public static int getBusesCount() {
         return buses.size();
     }
 
-    public static int getTramCount(){
+    public static int getTramCount() {
         return trams.size();
     }
-
 
 
     public static List<ZtmVehicle> getBusByLine(String line) {

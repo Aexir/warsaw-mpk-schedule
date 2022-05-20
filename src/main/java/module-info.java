@@ -5,6 +5,7 @@ module pl.dabkowski.edprojfx {
     requires java.sql;
     requires android.json;
     requires javafx.web;
+    requires jakarta.persistence;
 
     opens pl.dabkowski.edp to javafx.fxml;
     exports pl.dabkowski.edp;

@@ -16,15 +16,10 @@ public class MySqlManager {
     private Config config;
     private Connection conn;
 
-
     @SneakyThrows
     public MySqlManager() {
         logger = Logger.getLogger(this.getClass().getName());
-        try {
-            config = new Config();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        config = Config.getInstance();
         prepareConnection();
         prepareTables();
     }
@@ -47,11 +42,21 @@ public class MySqlManager {
     }
 
     public void prepareTables() throws SQLException {
-        String statement = "CREATE TABLE IF NOT EXISTS VEHICLE " +
-                "(ID integer(255) not null primary key ," +
+        String createVehicle = "CREATE TABLE IF NOT EXISTS VEHICLE " +
+                "(ID integer(255) not null primary key AUTO_INCREMENT," +
                 "NUMBER varchar (10)," +
                 "LONGITUDE varchar (30)," +
                 "LATITUDE varchar (30))";
-        getConnection().prepareStatement(statement).executeUpdate();
+
+        String createBusstop = "Create table if not exists Busstop " +
+                "(ID integer(255) not null primary key auto_increment," +
+                "Street varchar(50)," +
+                "stop_id varchar(10)," +
+                "stop_nr varchar(10), " +
+                "lon float(20)," +
+                "lat float(20))";
+        getConnection().prepareStatement(createVehicle).executeUpdate();
+        getConnection().prepareStatement(createBusstop).executeUpdate();
+
     }
 }

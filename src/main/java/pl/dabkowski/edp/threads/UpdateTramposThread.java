@@ -1,18 +1,16 @@
 package pl.dabkowski.edp.threads;
 
 import pl.dabkowski.edp.Main;
-import pl.dabkowski.edp.database.VehicleManager;
+import pl.dabkowski.edp.UmAPI;
 
-import java.io.IOException;
-
-public class UpdateTramposThread extends Thread{
+public class UpdateTramposThread extends Thread {
     @Override
     public void run() {
-        while(true){
+        while (true) {
             try {
-                Main.getUmAPI().updateTramLocation();
+                UmAPI.getInstance().updateTramLocation();
                 Thread.sleep(10000);
-            } catch (InterruptedException  e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

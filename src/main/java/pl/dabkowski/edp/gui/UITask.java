@@ -11,7 +11,7 @@ public class UITask extends Task {
         for (int i = 0; i < Busstop.busstos.size(); i++) {
             MapSceneController.webEngine.executeScript("test(long, lat)".replace("long",
                     String.valueOf(Busstop.busstos.get(i).getLocation().getLongitude())).replace("lat", String.valueOf(Busstop.busstos.get(i).getLocation().getLatitude())));
-            updateProgress(i,Busstop.busstos.size());
+            updateProgress(i, Busstop.busstos.size());
             System.out.println(i);
         }
 

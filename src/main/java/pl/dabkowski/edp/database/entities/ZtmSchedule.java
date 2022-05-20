@@ -1,5 +1,7 @@
 package pl.dabkowski.edp.database.entities;
 
+import jakarta.persistence.Entity;
+
 import java.util.List;
 
 public class ZtmSchedule {

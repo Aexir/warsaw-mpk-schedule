@@ -14,17 +14,12 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private static Config config;
-    @Getter
-    private static UmAPI umAPI;
+
     private static MySqlManager mySqlManager;
     @Getter
     private static Stage theStage;
 
     public static void main(String[] args) throws IOException {
-        config = new Config();
-        umAPI = new UmAPI();
-
         new UpdateBusposThread().start();
         new UpdateTramposThread().start();
         launch();
